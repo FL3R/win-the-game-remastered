@@ -657,7 +657,7 @@ screen health:
                                 $ howmuchtoshow += "\n{size=7}{color=#00ff00}(EQUIPPED){/color}{/size}"
                         vbox:
                             xpos 0.5 xanchor 0.5
-                            imagebutton idle showing_item hover showing_item2 xpos 0.5 xanchor 0.5 xalign 0.5 clicked ui.callsinnewcontext("items")
+                            imagebutton idle showing_item hover showing_item2 xalign 0.5 clicked ui.callsinnewcontext("items")
                             text howmuchtoshow xpos 0.5 xanchor 0.5 size 12 layout "subtitle" text_align 0.5
                     if itm.uses > 0 and not itm.broken:
                             $ num_bullets = itm.uses - itm.use_count
@@ -800,7 +800,7 @@ screen map:
     add "map/grid.png"
     
     if not on_cutscene:
-        textbutton "Exit" xanchor 1.0 yanchor 1.0 xpos 0.99 ypos 0.99 action Return() xminimum 150
+        textbutton "Exit" xalign 0.99 yalign 0.99 action Return() xminimum 150
 
     for i in locations:
 
@@ -970,7 +970,7 @@ screen stats:
         vbar value YScrollValue("vp")
 
     if not on_cutscene:
-        textbutton "Exit" xanchor 1.0 yanchor 1.0 xpos 0.99 ypos 0.99 action Return() xminimum 150
+        textbutton "Exit" xalign 0.99 yalign 0.99 action Return() xminimum 150
 
 ###################
 #### INVENTORY ###
@@ -1022,7 +1022,7 @@ screen items:
                 background Frame("map/line_box.png",5,5)
                 has hbox
                 vbox:
-                    add whattoshow xalign 0.5 xanchor 0.5
+                    add whattoshow xalign 0.5
                     null height 5
                     hbox:
                         add "gui/weapon.png"
@@ -1082,8 +1082,7 @@ screen items:
                 background Frame("map/line_box.png",5,5)
                 null
     hbox:
-        xpos 17 ypos 555
-        xanchor 0.0 yanchor 1.0
+        xalign 0.0 yalign 1.0
         
         for i in followers:
             if i in party:
@@ -1094,8 +1093,7 @@ screen items:
             null width 5
                 
     hbox:
-        xpos 15 ypos 585
-        xanchor 0.0 yanchor 1.0
+        xalign 0.0 yalign 1.0
         
         hbox:
             bar:
@@ -1135,7 +1133,7 @@ screen items:
             add "gui/armor.png"
             text show_armor ypos -1 size 16
     if not on_cutscene:
-        textbutton "Exit" xanchor 1.0 yanchor 1.0 xpos 0.99 ypos 0.99 action Return() xminimum 150
+        textbutton "Exit" xalign 0.99 yalign 0.99 action Return() xminimum 150
 
     
 label items:

@@ -128,7 +128,6 @@ screen choice:
         style "menu_window"        
         xalign 0.5
         yalign 0.93
-        yanchor 1.0
         vbox:
             style "menu"
             style_group "menu_size"

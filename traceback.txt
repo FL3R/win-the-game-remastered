@@ -1,0 +1,238 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/campaign_events.rpy", line 1188, in script
+    init python hide:
+  File "game/campaign_events.rpy", line 1188, in <module>
+    init python hide:
+  File "game/campaign_events.rpy", line 1189, in _execute_python_hide
+    config.keymap['screenshot'].remove('s')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+ValueError: list.remove(x): x not in list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/engine.rpy", line 550, in analyze_screen
+    screen health:
+  File "game/engine.rpy", line 550, in analyze
+    screen health:
+  File "game/engine.rpy", line 550, in analyze
+    screen health:
+  File "game/engine.rpy", line 626, in analyze
+    hbox: # display items
+  File "game/engine.rpy", line 626, in analyze
+    hbox: # display items
+  File "game/engine.rpy", line 631, in analyze
+    if not minimap:
+  File "game/engine.rpy", line 631, in analyze
+    if not minimap:
+  File "game/engine.rpy", line 632, in analyze
+    for i in inventory:
+  File "game/engine.rpy", line 632, in analyze
+    for i in inventory:
+  File "game/engine.rpy", line 635, in analyze
+    vbox:
+  File "game/engine.rpy", line 635, in analyze
+    vbox:
+  File "game/engine.rpy", line 637, in analyze
+    frame:
+  File "game/engine.rpy", line 637, in analyze
+    frame:
+  File "game/engine.rpy", line 647, in analyze
+    if itm.broken:
+  File "game/engine.rpy", line 647, in analyze
+    if itm.broken:
+  File "game/engine.rpy", line 648, in analyze
+    if itm.type == "gun":
+  File "game/engine.rpy", line 652
+    weapon_range="melee"
+                ^^^^^^^^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/campaign_events.rpy", line 1188, in script
+    init python hide:
+  File "game/campaign_events.rpy", line 1188, in script
+    init python hide:
+AttributeError: 'NoneType' object has no attribute 'constant'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/campaign_events.rpy", line 1188, in script
+    init python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1273, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/campaign_events.rpy", line 1188, in <module>
+    init python hide:
+  File "game/campaign_events.rpy", line 1189, in _execute_python_hide
+    config.keymap['screenshot'].remove('s')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/common/00keymap.rpy", line 28, in remove
+    _list.remove(self, a)
+    ~~~~~~~~~~~~^^^^^^^^^
+ValueError: list.remove(x): x not in list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/display/core.py", line 2154, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2384, in interact_core
+    renpy.display.screen.prepare_screens()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 1028, in prepare_screens
+    analyze_screens()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 1006, in analyze_screens
+    s.ast.analyze_screen()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "game/engine.rpy", line 550, in analyze_screen
+    screen health:
+  File "game/engine.rpy", line 550, in analyze
+    screen health:
+  File "game/engine.rpy", line 550, in analyze
+    screen health:
+  File "game/engine.rpy", line 626, in analyze
+    hbox: # display items
+  File "game/engine.rpy", line 626, in analyze
+    hbox: # display items
+  File "game/engine.rpy", line 631, in analyze
+    if not minimap:
+  File "game/engine.rpy", line 631, in analyze
+    if not minimap:
+  File "game/engine.rpy", line 632, in analyze
+    for i in inventory:
+  File "game/engine.rpy", line 632, in analyze
+    for i in inventory:
+  File "game/engine.rpy", line 635, in analyze
+    vbox:
+  File "game/engine.rpy", line 635, in analyze
+    vbox:
+  File "game/engine.rpy", line 637, in analyze
+    frame:
+  File "game/engine.rpy", line 637, in analyze
+    frame:
+  File "game/engine.rpy", line 647, in analyze
+    if itm.broken:
+  File "game/engine.rpy", line 647, in analyze
+    if itm.broken:
+  File "game/engine.rpy", line 648, in analyze
+    if itm.type == "gun":
+  File "renpy/pyanalysis.py", line 674, in is_constant_expr
+    node, literal = ccache.ast_eval_literal(expr)
+                    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/pyanalysis.py", line 895, in ast_eval_literal
+    expr = py_compile(expr, "eval", ast_node=True)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_compile
+    raise e
+  File "renpy/python.py", line 1190, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/engine.rpy", line 652
+    weapon_range="melee"
+                ^^^^^^^^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 483, in main
+    node.execute_init()
+    ~~~~~~~~~~~~~~~~~^^
+  File "renpy/ast.py", line 1071, in execute_init
+    renpy.game.context().run(self.block[0])
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "game/campaign_events.rpy", line 1188, in script
+    init python hide:
+  File "game/campaign_events.rpy", line 1188, in script
+    init python hide:
+  File "renpy/display/error.py", line 135, in report_exception
+    renpy.game.invoke_in_new_context(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        call_exception_screen,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ignore_action=ignore_action,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/game.py", line 285, in invoke_in_new_context
+    return callable(*args, **kwargs)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/display/error.py", line 44, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2177, in interact
+    scene_lists.replace_transient()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/display/scenelists.py", line 255, in replace_transient
+    self.remove(layer, tag, prefix=p if p is not None else prefix)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/scenelists.py", line 590, in remove
+    self.hide_or_replace(layer, remove_index, prefix)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/scenelists.py", line 494, in hide_or_replace
+    d = oldsle.displayable._in_current_store()._hide(now - st, now - at, prefix)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 568, in _hide
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/common/_errorhandling.rpym", line 783, in prepare_screen
+    screen _exception:
+  File "renpy/common/_errorhandling.rpym", line 783, in prepare
+    screen _exception:
+  File "renpy/common/_errorhandling.rpym", line 792, in prepare
+    frame:
+  File "renpy/common/_errorhandling.rpym", line 792, in prepare
+    frame:
+  File "renpy/common/_errorhandling.rpym", line 795, in prepare
+    has side "t c b":
+  File "renpy/common/_errorhandling.rpym", line 795, in prepare
+    has side "t c b":
+  File "renpy/common/_errorhandling.rpym", line 821, in prepare
+    hbox:
+  File "renpy/common/_errorhandling.rpym", line 821, in prepare
+    hbox:
+  File "renpy/common/_errorhandling.rpym", line 822, in prepare
+    vbox:
+  File "renpy/common/_errorhandling.rpym", line 822, in prepare
+    vbox:
+  File "renpy/common/_errorhandling.rpym", line 823, in prepare
+    hbox:
+  File "renpy/common/_errorhandling.rpym", line 823, in prepare
+    hbox:
+  File "renpy/sl2/slast.py", line 2032, in prepare
+    self.constant = min(self.constant, self.ast.constant)
+                                       ^^^^^^^^^^^^^^^^^ 
+AttributeError: 'NoneType' object has no attribute 'constant'
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.2.26010301
+Win the Game - Remastered 1.0
+Sat May  2 15:12:58 2026
